@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FF6B6B;
+  --primary-dark: #E85555;
+  --secondary: #4ECDC4;
+  --accent: #FF9F43;
+  --bg: #FFF9F5;
+  --border: #F0EAE5;
+  --text: #2D2D2D;
+  --muted: #A0A0A0;
+  --sub: #6B6B6B;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background: var(--bg);
+}
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+::-webkit-scrollbar { display: none; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+  0% { transform: scale(.94); }
+  60% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fade-up { animation: fadeUp .35s ease both; }
+.pop { animation: pop .25s ease both; }
+.spin { animation: spin 1s linear infinite; }
+
+body {
+  min-height: 100dvh;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="time"],
+textarea {
+  font-size: max(16px, 1rem);
+}
